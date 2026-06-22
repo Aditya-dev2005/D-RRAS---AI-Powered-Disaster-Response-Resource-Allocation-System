@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode - kept functional but this product is designed dark-first */
+    --background: 220 30% 97%;
+    --foreground: 222 30% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 30% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 30% 10%;
+    --surface: 220 25% 95%;
+    --primary: 220 90% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 16% 92%;
+    --secondary-foreground: 222 30% 14%;
+    --muted: 220 16% 92%;
+    --muted-foreground: 220 10% 42%;
+    --accent: 220 16% 92%;
+    --accent-foreground: 222 30% 14%;
+    --destructive: 355 80% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 16% 87%;
+    --input: 220 16% 87%;
+    --ring: 220 90% 52%;
+    --critical: 355 85% 52%;
+    --critical-foreground: 0 0% 100%;
+    --warning: 36 95% 48%;
+    --warning-foreground: 30 50% 12%;
+    --success: 150 65% 36%;
+    --success-foreground: 0 0% 100%;
+    --signal: 220 90% 52%;
+    --signal-foreground: 0 0% 100%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Operations-center dark theme - the intended default experience */
+    --background: 226 32% 6%;
+    --foreground: 220 28% 94%;
+    --card: 222 26% 9%;
+    --card-foreground: 220 28% 94%;
+    --popover: 222 26% 8%;
+    --popover-foreground: 220 28% 94%;
+    --surface: 222 24% 10%;
+    --primary: 220 100% 65%;
+    --primary-foreground: 222 40% 8%;
+    --secondary: 222 20% 15%;
+    --secondary-foreground: 220 28% 94%;
+    --muted: 222 18% 16%;
+    --muted-foreground: 220 14% 60%;
+    --accent: 222 20% 15%;
+    --accent-foreground: 220 28% 94%;
+    --destructive: 355 90% 62%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 20% 18%;
+    --input: 222 20% 18%;
+    --ring: 220 100% 65%;
+    --critical: 355 100% 65%;
+    --critical-foreground: 222 40% 8%;
+    --warning: 36 100% 62%;
+    --warning-foreground: 30 60% 10%;
+    --success: 145 64% 51%;
+    --success-foreground: 145 60% 8%;
+    --signal: 220 100% 65%;
+    --signal-foreground: 222 40% 8%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  ::selection {
+    @apply bg-signal/30 text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .data-mono {
+    font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+    font-feature-settings: "tnum";
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 999px;
+  }
+}
+
+/* Leaflet dark-tactical-map overrides */
+.leaflet-container {
+  background: hsl(var(--background)) !important;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.leaflet-popup-content-wrapper {
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+}
+.leaflet-popup-tip {
+  background: hsl(var(--card));
+}
+.leaflet-control-zoom a {
+  background: hsl(var(--card)) !important;
+  color: hsl(var(--foreground)) !important;
+  border-color: hsl(var(--border)) !important;
+}
+
+.route-line-animated {
+  stroke-dasharray: 12 8;
+  animation: dash-flow 1.2s linear infinite;
+}
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
