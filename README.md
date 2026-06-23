@@ -13,8 +13,9 @@ A production-grade full-stack disaster operations platform combining
 situational intelligence** — served through a REST API and a dark
 ops-center dashboard.
 
-> **Live Demo:** [drras.yourdomain.com](https://drras.yourdomain.com)
-> **Backend API Docs:** [api.yourdomain.com/docs](https://api.yourdomain.com/docs)
+> [![Live Demo](https://img.shields.io/badge/Live%20Demo-drras.yourdomain.com-blue?style=for-the-badge)](https://d-rras-ai-powered-disaster-response-resource-a-production.up.railway.app/login)
+
+> **Backend API Docs:** [drras-production.up.railway.app](https://drras-production.up.railway.app/docs)
 
 ---
 
@@ -33,37 +34,27 @@ problems with no unified tool:
 ---
 
 ## Architecture
+
+```text
 Browser (Next.js 15 Ops Dashboard)
-
-│  React Query (caching + mutations)
-
-│  Axios (JWT on every request)
-
-▼
-
+   │  
+   │  React Query (caching + mutations)
+   │  Axios (JWT on every request)
+   ▼
 FastAPI (24 REST endpoints, JWT + RBAC)
-
-│
-
-┌────┴─────────────────────────────────┐
-
-│           Service Layer              │
-
-│  Dijkstra │ A* │ Knapsack │ Greedy  │
-
+   │
+┌──┴───────────────────────────────────┐
+│            Service Layer             │
+│  Dijkstra │ A* │ Knapsack │ Greedy   │
 │  AI Summary │ AI Assistant           │
-
-└────┬─────────────────────────────────┘
-
-│  SQLAlchemy ORM
-
-▼
-
+└──┬───────────────────────────────────┘
+   │  SQLAlchemy ORM
+   ▼
 PostgreSQL (6 tables, indexed)
-
-│
-
+   │
+   ▼
 OpenRouter (LLM completions)
+```
 
 **Design principles:** Stateless API (horizontal scaling behind any load
 balancer), layered architecture (routers → services → models, one-direction
