@@ -231,13 +231,50 @@ See `drras-backend/README.md` for full step-by-step cloud deployment.
 
 ---
 
-## Screenshots
+## 📸 Screenshots
 
-> *(add screenshots here after deployment)*
-> - Overview Dashboard
-> - Route Optimization Map with blocked road rerouting
-> - Knapsack Allocation Results
-> - AI Intelligence Center
+<table>
+  <tr>
+    <td align="center"><b>Login & Authentication</b></td>
+    <td align="center"><b>Operations Overview Dashboard</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/login_page.png" alt="Login Page" width="100%"/></td>
+    <td><img src="screenshots/overview.png" alt="Overview Dashboard" width="100%"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Disaster Management</b></td>
+    <td align="center"><b>Emergency Request Management</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/disaster_management_screen.png" alt="Disaster Management" width="100%"/></td>
+    <td><img src="screenshots/emergency_request_management.png" alt="Emergency Request Management" width="100%"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Resource Management</b></td>
+    <td align="center"><b>Volunteer Management</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/resource_management.png" alt="Resource Management" width="100%"/></td>
+    <td><img src="screenshots/volunteers_management.png" alt="Volunteer Management" width="100%"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Route Optimization with Live Map</b></td>
+    <td align="center"><b>Road Network & Block Control</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/route_optimisation.png" alt="Route Optimization" width="100%"/></td>
+    <td><img src="screenshots/Road_network.png" alt="Road Network" width="100%"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>AI Intelligence Center</b></td>
+    <td align="center"><b>Admin Control Center</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/AI_Intelligence.png" alt="AI Intelligence Center" width="100%"/></td>
+    <td><img src="screenshots/Admin_controls.png" alt="Admin Controls" width="100%"/></td>
+  </tr>
+</table>
 
 ---
 
